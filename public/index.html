@@ -3,6 +3,44 @@
     <title> b l a n k </title>
 </head>
 
+<html>
+    
+    <head>
+    <title>Icon Template Square</title>
+        <style>
+            .row{
+                width:720px;
+                margin: 10px auto 10px auto ;
+            }
+            .image-container {
+                display: table-cell;
+                vertical-align: middle;
+                padding:20px;
+            }
+        </style>
+    </head>
 <body>
-   new comment!!!
+    <div class="row">
+        <div class="image-container"><img id= "cir" src="home@2x.png" height="200" width="200"/></div>
+        <div class="image-container"><img id= "cir" src="img/tri.png" height="200" width="200"/></div>
+        <div class="image-container"><img id= "cir" src="img/squ.png" height="200" width="200"/></div>
+    </div>
+
+    <div class="row">
+        <div class="image-container"><img src="img/hex.png" height="200" width="200"/></div>
+        <div class="image-container"><img src="img/rec.png" height="200" width="200"/></div>
+        <div class="image-container"><img src="img/sta.png" height="200" width="200"/></div>
+        </div>
+
+    <div class="row">
+        <div class="image-container"><img src="img/trr.png" height="200" width="200"/></div>
+        <div class="image-container"><img src="img/sqr.png" height="200" width="200"/></div>
+        <div class="image-container"><img src="img/her.png" height="200" width="200"/></div>
+    </div>
 </body>
+
+<script> 
+const cir = document.getElementById ('cir')
+const cir_audio = new Audio ('souns/1.mp3')
+cir.onpointerdown = () => cir_audio.play ()
+</script>
