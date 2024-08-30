@@ -1,10 +1,7 @@
 <!doctype html>
 <head>
     <title> b l a n k </title>
-</head>
 
-<html>
-    
     <head>
     <title>Icon Template Square</title>
         <style>
@@ -18,16 +15,21 @@
                 padding:20px;
             }
         </style>
-    </head>
-<body>
+
+<script src =""></script>
+    
+
+</head>
+
+<body style="background-color: rgb(237, 253, 255);">
     <div class="row">
-        <div class="image-container"><img id= "cir" src="sleep@2x.png" height="200" width="200"/></div>
-        <div class="image-container"><img id= "cir" src="social@2x.png" height="200" width="200"/></div>
-        <div class="image-container"><img id= "cir" src="home@2x.png" height="200" width="200"/></div>
+        <div class="image-container"><img id= "cir" src="sleep.png" height="200" width="200"/></div>
+        <div class="image-container"><img id= "social" src="social.png" height="200" width="200"/></div>
+        <div class="image-container"><img id= "home" src="home.png" height="200" width="200"/></div>
     </div>
 
     <div class="row">
-        <div class="image-container"><img src="img/hex.png" height="200" width="200"/></div>
+        <div class="image-container"><img src="relax.png" height="200" width="200"/></div>
         <div class="image-container"><img src="img/rec.png" height="200" width="200"/></div>
         <div class="image-container"><img src="img/sta.png" height="200" width="200"/></div>
         </div>
@@ -39,8 +41,58 @@
     </div>
 </body>
 
-<script> 
-const cir = document.getElementById ('cir')
-const cir_audio = new Audio ('souns/1.mp3')
-cir.onpointerdown = () => cir_audio.play ()
-</script>
+</style>
+<body>
+    <div class="icon-grid">
+        <div class="icon-item" data-hover="sleep.png" data-sound="click.mp3">
+            <img src="sleep2.png" alt="Icon 1">
+        </div>
+        <div class="icon-item" data-hover="2-2.png" data-sound="click.mp3">
+            <img src="2-1.png" alt="Icon 2">
+        </div>
+        <div class="icon-item" data-hover="3-2.png" data-sound="click.mp3">
+            <img src="3-1.png" alt="Icon 3">
+        </div>
+        <div class="icon-item" data-hover="4-2.png" data-sound="click.mp3">
+            <img src="4-1.png" alt="Icon 4">
+        </div>
+        <div class="icon-item" data-hover="5-2.png" data-sound="click.mp3">
+            <img src="5-1.png" alt="Icon 5">
+        </div>
+        <div class="icon-item" data-hover="6-2.png" data-sound="click.mp3">
+            <img src="6-1.png" alt="Icon 6">
+        </div>
+        <div class="icon-item" data-hover="7-2.png" data-sound="click.mp3">
+            <img src="7-1.png" alt="Icon 7">
+        </div>
+        <div class="icon-item" data-hover="8-2.png" data-sound="click.mp3">
+            <img src="8-1.png" alt="Icon 8">
+        </div>
+        <div class="icon-item" data-hover="9-2.png" data-sound="click.mp3">
+            <img src="9-1.png" alt="Icon 9">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.icon-item').forEach(item => {
+            const img = item.querySelector('img');
+            const hoverImg = item.getAttribute('data-hover');
+            const sound = new Audio(item.getAttribute('data-sound'));
+
+            item.addEventListener('mouseover', () => {
+                img.src = hoverImg; 
+                sound.play(); 
+            });
+
+            item.addEventListener('mouseout', () => {
+                img.src = img.getAttribute('data-original'); 
+                sound.pause();
+                sound.currentTime = 0;
+            });
+
+            
+            img.setAttribute('data-original', img.src);
+        });
+    </script>
+</body>
+</html>
